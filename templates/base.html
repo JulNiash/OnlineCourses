@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'coursepart_list' %}">Course Part</a> </li>
+                <li><a href="{% url 'coursepart_list' %}">Course Topics</a> </li>
+                <li><a href="{% url 'coursepart_list' %}">Documents</a> </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p> 2024 Online Courses. All rights reserved. </p>
+    </footer>
+</body>
+</html>

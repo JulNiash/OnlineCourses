@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Topic List</title>
+</head>
+<body>
+
+<h1>Course Topic List</h1>
+<ul>
+    {% for topic in topics %}
+    <li>
+        {{ topic.title }}
+        <a href="{% url 'course_topic_detail' topic.part.course.id topic.part.id topic.id %}">View</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'course_topic_update' topic.part.course.id topic.part.id topic.id %}">Update</a>
+        <a href="{% url 'course_topic_delete' topic.part.course.id topic.part.id topic.id %}">Delete</a>
+        {% endif %}
+
+    </li>
+    {% endfor %}
+</ul>
+
+{% if user.is_authenticated %}
+<h2>Create new course topic</h2>
+<ul>
+    <a href="{% url 'course_topic_create' part.course.id part.id%}">Create</a>
+</ul>
+{% endif %}
+
+
+
+<h2>Return to part detail</h2>
+<ul>
+    <a href="{% url 'course_part_detail' part.course.id part.id %}">Back</a>
+</ul>
+</body>
+</html>

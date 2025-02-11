@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Topic list</title>
+</head>
+<body>
+
+<h1>Course Topic List</h1>
+<ul>
+   <h1>{{view.title}}</h1>
+    <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Save</button>                                                                                                                                                           
+    </form>
+
+
+</ul>
+
+</body>
+</html>

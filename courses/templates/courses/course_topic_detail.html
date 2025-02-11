@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Topic Detail</title>
+</head>
+<body>
+<h1>Course Topic Detail: {{ topic.title }}</h1>
+<p>{{ topic.title }}</p>
+<h2>Return to topics list</h2>
+<a href="{% url 'course_topic_list' part.course.id part.id %}">Back</a>
+</body>
+</html>

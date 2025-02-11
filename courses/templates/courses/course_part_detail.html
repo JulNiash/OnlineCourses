@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Part Detail</title>
+</head>
+<body>
+<h1>Course Part Detail: {{ part.title }}</h1>
+
+<h2>Topics of this part:</h2>
+<ul>
+    <a href="{% url 'course_topic_list' course.id part.id%}">Topics</a>
+</ul>
+<h2>Return to course parts</h2>
+<ul>
+    <a href="{% url 'course_part_list' course.id %}">Back</a>
+
+</ul>
+
+</body>
+</html>
