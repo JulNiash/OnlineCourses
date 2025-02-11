@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Topic delete</title>
+</head>
+<body>
+
+<h1>Course Topic</h1>
+<h1>Are you sure want to delete "{{ topic.title }}"?</h1>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Yes, delete</button>
+</form>
+
+</body>
+</html>

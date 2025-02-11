@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Download</button>
+</form>
+
+<h2>Uploaded documents:</h2>
+<ul>
+    {% for document in documents %}
+        <li>
+            <a href="{{ document.file.url }}"> {{ document.name }} </a>
+            (Topic: {{ document.topic.title }})
+            <a href="{% url 'update_document' document.id %}">Edit</a> |
+            <a href="{% url 'delete_document' document.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

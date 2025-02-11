@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+    <p>Hi, {{ user.username }}!</p>
+    <a href="{% url 'logout' %}">Log Out</a>
+    <a href="{% url 'course_list' %}">Go to course list</a>
+{% endif %}
+{% if user.is_not_authenticated %}
+<p>Authorization <a href="{% url 'login' %}">log in</a></p>
+<p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+{% endif %}
+</body>
+</html>
